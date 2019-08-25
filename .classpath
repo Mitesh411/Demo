@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-12">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/libs/libs/byte-buddy-1.8.15.jar"/>
+	<classpathentry kind="lib" path="C:/libs/libs/client-combined-3.141.59.jar"/>
+	<classpathentry kind="lib" path="C:/libs/libs/client-combined-3.141.59-sources.jar"/>
+	<classpathentry kind="lib" path="C:/libs/libs/commons-exec-1.3.jar"/>
+	<classpathentry kind="lib" path="C:/libs/libs/guava-25.0-jre.jar"/>
+	<classpathentry kind="lib" path="C:/libs/libs/okhttp-3.11.0.jar"/>
+	<classpathentry kind="lib" path="C:/libs/libs/okio-1.14.0.jar"/>
+	<classpathentry kind="lib" path="C:/libs/commons-io/commons-io-2.6.jar"/>
+	<classpathentry kind="lib" path="C:/libs/commons-io/commons-io-2.6-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/libs/commons-io/commons-io-2.6-sources.jar"/>
+	<classpathentry kind="lib" path="C:/libs/commons-io/commons-io-2.6-tests.jar"/>
+	<classpathentry kind="lib" path="C:/libs/commons-io/commons-io-2.6-test-sources.jar"/>
+	<classpathentry kind="lib" path="C:/libs/jfairy/aopalliance-1.0.jar"/>
+	<classpathentry kind="lib" path="C:/libs/jfairy/commons-lang3-3.6.jar"/>
+	<classpathentry kind="lib" path="C:/libs/jfairy/commons-math3-3.6.1.jar"/>
+	<classpathentry kind="lib" path="C:/libs/jfairy/guava-20.0.jar"/>
+	<classpathentry kind="lib" path="C:/libs/jfairy/guice-4.1.0.jar"/>
+	<classpathentry kind="lib" path="C:/libs/jfairy/guice-assistedinject-4.1.0.jar"/>
+	<classpathentry kind="lib" path="C:/libs/jfairy/iban4j-3.2.1.jar"/>
+	<classpathentry kind="lib" path="C:/libs/jfairy/javassist-3.21.0-GA.jar"/>
+	<classpathentry kind="lib" path="C:/libs/jfairy/javax.inject-1.jar"/>
+	<classpathentry kind="lib" path="C:/libs/jfairy/jfairy-0.5.9.jar"/>
+	<classpathentry kind="lib" path="C:/libs/jfairy/joda-time-2.9.9.jar"/>
+	<classpathentry kind="lib" path="C:/libs/jfairy/reflections-0.9.11.jar"/>
+	<classpathentry kind="lib" path="C:/libs/jfairy/slf4j-api-1.7.25.jar"/>
+	<classpathentry kind="lib" path="C:/libs/jfairy/snakeyaml-1.18.jar"/>
+	<classpathentry kind="lib" path="C:/libs/chromedriver/ashot-1.5.4.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
