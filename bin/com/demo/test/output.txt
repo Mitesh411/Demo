@@ -1,0 +1,163 @@
+package HMO;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+import ru.yandex.qatools.ashot.AShot;
+import ru.yandex.qatools.ashot.Screenshot;
+import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.PrintStream;
+import java.util.Date;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import javax.imageio.ImageIO;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+
+
+public class Schedule_Now_SF {
+
+	public static void main(String[] args) throws InterruptedException, IOException {
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.chrome.driver", "D://chromedriver/chromedriver.exe");
+		
+		WebDriver driver = new ChromeDriver();
+		PrintStream out = new PrintStream(new FileOutputStream("D://chromedriver//output.txt"));
+	     System.setOut(out);
+		String appUrl = "https://dev.hivebariatrics.com/lp/live-phone-lead.html";
+		driver.get(appUrl);
+		driver.manage().window().maximize();
+		long millis=System.currentTimeMillis();  
+	     java.util.Date date=new java.util.Date(millis);  
+	     System.out.println("\n Testing Starts At :- >\t"+date+"\n \t"); 
+	     System.out.println("\n");
+	     System.out.println("\n");
+	     System.out.println("\n");
+		WebElement ic = driver.findElement(By.xpath("//label[contains(text(),'Schedule Now')]//input[@id='phone_lead-radio']"));
+		ic.click();
+	   
+		WebElement username = driver.findElement(By.id("first-name"));
+		username.clear();
+		username.sendKeys("Mits");
+		
+		
+		
+		WebElement last = driver.findElement(By.id("last-name"));
+		last.clear();
+		last.sendKeys("Patil");
+	
+		
+		WebElement phone  = driver.findElement(By.id("phone"));
+		phone.clear();
+		phone.sendKeys("9560654881");
+		Thread.sleep(5000);
+				
+		WebElement btn  = driver.findElement(By.id("schedule-submit-button"));
+        btn.click();
+		
+        Thread.sleep(2000);
+        
+        
+        WebElement btn2  = driver.findElement(By.id("phone_lead-hmoradio"));
+        btn2.click();
+        
+        Thread.sleep(5000);
+        
+        Select drp = new Select(driver.findElement(By.id("practice_location")));
+		drp.selectByVisibleText("Canton (America/New_York)");
+        Thread.sleep(2000);
+       
+       WebElement dat = driver.findElement(By.xpath("//span[@class='fc-day-grid-event fc-h-event fc-event fc-start fc-end m-fc-event--solid-focus m-fc-event--light']"));
+       dat.click();
+        Thread.sleep(2000);
+       WebElement dat1 = driver.findElement(By.xpath("//span[@class='fc-day-grid-event fc-h-event fc-event fc-start fc-end m-fc-event--solid-focus m-fc-event--light']"));
+       dat1.click();
+       Thread.sleep(5000); 
+        
+       WebElement dat2 = driver.findElement(By.xpath("//*[@id=\"m_portlet\"]/div[4]/div[2]/div/a[1]"));
+     
+       dat2.click();
+       Thread.sleep(2000);
+       driver.findElement(By.id("btn_book_appointment")).click();
+       Thread.sleep(5000);
+       
+      System.out.println("\n");
+      System.out.println("\n"); 
+       String test = driver.findElement(By.xpath("//p[@id='res_msg']")).getText();
+       
+       System.out.println("\n \t TEST RESULT \n \t ");
+       System.out.println("\n");
+       Pattern re = Pattern.compile("[^.!?\\s][^.!?]*(?:[.!?](?!['\"]?\\s|$)[^.!?]*)*[.!?]?['\"]?(?=\\s|$)", Pattern.MULTILINE | Pattern.COMMENTS);
+	      Matcher reMatcher = re.matcher(test);
+	      while (reMatcher.find()) {
+	          System.out.println(reMatcher.group());
+	      }
+        Thread.sleep(2000);
+        
+        
+        
+        Screenshot fpScreenshot = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(driver);
+	     ImageIO.write(fpScreenshot.getImage(),"PNG",new File("D:\\chromedriver\\Demo_SNSF.png"));
+       
+	     System.out.println("<=====================================>");
+		 System.out.println("\n");
+		 Date date1 = new Date();
+		 System.out.println("\n \t Testing Time Ends At :- > \t"+date1.toString());
+		 System.out.println("\n");
+		 System.out.println("\n");
+		 System.out.println("<=====================================>");
+		 System.out.println("\n");
+		 System.out.println("\n");
+		 System.out.println("\n \t <------------- TEST END -------------> \n \t ");	
+	     
+	    driver.close();
+	    driver.quit();
+	}
+
+}
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+LINK FOR HEADLESS BROWSER :- https://stackoverflow.com/questions/47067188/headless-chrome-run-with-selenium
+
+
+
+package com.prac;
+
+import org.openqa.selenium.chrome.*;
+
+public class Headless {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+			System.setProperty("webdriver.chrome.driver","C:\\libs\\chromedriver\\chromedriver.exe");
+			ChromeOptions chromeOptions = new ChromeOptions();
+		  //  chromeOptions.addArguments("--headless");
+			chromeOptions.setHeadless(true);
+		    ChromeDriver driver = new ChromeDriver(chromeOptions);
+		    driver.get("https://the-internet.herokuapp.com/login");
+		    System.out.println(driver.getTitle());
+		    long millis=System.currentTimeMillis();  
+		     java.util.Date date=new java.util.Date(millis);  
+		     System.out.println("\n Testing Ends At :- >\t"+date+"\n \t"); 
+	}
+
+}
+
+
+
